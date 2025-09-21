@@ -28,41 +28,41 @@ import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
 const aboutStats = [
-  { label: "Years of experience", value: "3+" },
-  { label: "Technologies mastered", value: "5+" },
-  { label: "Companies worked with", value: "15+" },
+  { label: "Years of experience", value: "4+" },
+  { label: "Technologies worked with", value: "10+" },
+  // { label: "Companies worked with", value: "15+" },
 ];
 
 const projects = [
   {
-    title: "Unqueue",
-    description: "E-commerce platform for selling digital products",
+    title: "Djackets",
+    description: "E-commerce platform curated in Django for selling Jackets",
     image: "/assets/unqueue.webm",
-    href: "https://unqueue.shop/",
+    href: "https://github.com/ashutosh-pandey10/djackets-backend",
   },
-  {
-    title: "InfiniteVPS",
-    description: "High performance VPS hosting solution",
-    image: "/assets/infinitevps.webm",
-    href: "#",
-  },
-  {
-    title: "TranslateBot",
-    description: "Powerful Multilingual Translation Bot for Discord",
-    image: "/assets/translate_bot.webm",
-    href: "https://translatebot.app/",
-  },
-  {
-    title: "Wrona",
-    description: "Robotics-focused technology company",
-    image: "/assets/wrona.jpeg",
-    href: "https://www.wrona.com/",
-  },
+  // {
+  //   title: "InfiniteVPS",
+  //   description: "High performance VPS hosting solution",
+  //   image: "/assets/infinitevps.webm",
+  //   href: "#",
+  // },
+  // {
+  //   title: "TranslateBot",
+  //   description: "Powerful Multilingual Translation Bot for Discord",
+  //   image: "/assets/translate_bot.webm",
+  //   href: "https://github.com/ashutosh-pandey10/djackets-backend",
+  // },
+  // {
+  //   title: "Wrona",
+  //   description: "Robotics-focused technology company",
+  //   image: "/assets/wrona.jpeg",
+  //   href: "https://www.wrona.com/",
+  // },
   {
     title: "This website",
     description: "My personal website",
     image: "/assets/portfolio.webm",
-    href: "https://github.com/wendoj/portfolio",
+    href: "https://github.com/ashutosh-pandey10/portfolio-v3",
   },
 ];
 
@@ -184,7 +184,7 @@ export default function Home() {
           className="mt-40 flex w-full flex-col items-center xl:mt-0 xl:min-h-screen xl:flex-row xl:justify-between"
         >
           <div className={styles.intro}>
-            <div
+            {/* <div
               data-scroll
               data-scroll-direction="horizontal"
               data-scroll-speed=".09"
@@ -193,7 +193,7 @@ export default function Home() {
               <span className={styles.pill}>next.js</span>
               <span className={styles.pill}>tailwindcss</span>
               <span className={styles.pill}>typescript</span>
-            </div>
+            </div> */}
             <div>
               <h1
                 data-scroll
@@ -206,7 +206,7 @@ export default function Home() {
                   <br />
                 </span>
                 <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  WendoJ.
+                  Ashutosh.
                 </span>
               </h1>
               <p
@@ -215,8 +215,10 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced full-stack website developer with a passion for
-                crafting unique digital experiences.
+                {/* An experienced full-stack website developer with a passion for
+                crafting unique digital experiences. */}
+                A seasoned software engineer with a passion for solving complex 
+                backend challenges and a knack for attention to detail.
               </p>
             </div>
             <span
@@ -225,17 +227,26 @@ export default function Home() {
               data-scroll-speed=".06"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-              <Link href="mailto:wendoj@proton.me" passHref>
-                <Button>
-                  Get in touch <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
               <Button
-                variant="outline"
+                // variant="outline"
                 onClick={() => scrollTo(document.querySelector("#about"))}
               >
-                Learn more
+                <Link 
+                  href="https://drive.google.com/file/d/1jSEXTutMPFk-vI6KThwNJUsbEBaUciYj/view?usp=sharing"
+                  target="_blank"
+                  >
+                  Download résumé
+                </Link> 
+                <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
+              <Link href="mailto:ashupandey516@gmail.com" passHref>
+                <Button
+                  variant="outline">
+                  Get in touch
+                   {/* <ChevronRight className="ml-1 h-4 w-4" /> */}
+                </Button>
+              </Link>
+              
             </span>
 
             <div
