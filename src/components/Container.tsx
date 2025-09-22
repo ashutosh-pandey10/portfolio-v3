@@ -83,9 +83,9 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Wendo",
+    title: "portfolio",
     description: `Full-stack website developer and TypeScript enthusiast.`,
-    image: "/assets/logo.webp",
+    image: "/assets/logo-2.png",
     type: "website",
     ...customMeta,
   };
@@ -138,7 +138,7 @@ export default function Container(props: ContainerProps) {
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="/logo-2.png" />
       </Head>
       <nav
         className={cn(
