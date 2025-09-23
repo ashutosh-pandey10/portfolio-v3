@@ -280,7 +280,7 @@ export default function Home() {
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              I&apos;m an experienced full-stack developer proficient in{" "}
+              {/* I&apos;m an experienced full-stack developer proficient in{" "}
               <Link
                 href="https://create.t3.gg/"
                 target="_blank"
@@ -292,7 +292,12 @@ export default function Home() {
               companies, where I&apos;ve been instrumental in the entire product
               design process; from ideation and wireframing, through
               prototyping, to the delivery of the final product, all while
-              efficiently collaborating with cross-functional teams.
+              efficiently collaborating with cross-functional teams. */}
+              Ashutosh Pandey is a backend engineer with 4+ years of experience, holding a 
+              strong foundation in python backends and Golang. I&apos;m proficient in building 
+              REST APIs, working with RDBMS and cloud technologies such as AWS. Passionate 
+              about writing clean, modular and maintainable code, I also like solving complex 
+              backend challenges and enjoy architecting and optimizing enterprise applications.
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
@@ -312,8 +317,57 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Skills */}
+        <section id="skills" data-scroll-section>
+          <div
+            data-scroll
+            data-scroll-speed=".4"
+            data-scroll-position="top"
+            className="my-24 flex flex-col justify-start space-y-10"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 1,
+                staggerChildren: 0.5,
+              }}
+              viewport={{ once: true }}
+              className="grid items-center gap-1.5 md:grid-cols-2 xl:grid-cols-3"
+            >
+              <div className="flex flex-col py-6 xl:p-6">
+                <h2 className="text-4xl font-medium tracking-tight">
+                  Need more info?
+                  <br />
+                  <span className="text-gradient clash-grotesk tracking-normal">
+                    I got you.
+                  </span>
+                </h2>
+                <p className="mt-2 tracking-tighter text-secondary-foreground">
+                  Here are some of the services I offer. If you have any
+                  questions, feel free to reach out.
+                </p>
+              </div>
+              {services.map((service) => (
+                <div
+                  key={service.service}
+                  className="flex flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
+                >
+                  <service.icon className="my-6 text-primary" size={20} />
+                  <span className="text-lg tracking-tight text-foreground">
+                    {service.service}
+                  </span>
+                  <span className="mt-2 tracking-tighter text-muted-foreground">
+                    {service.description}
+                  </span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* Projects */}
-        <section id="projects" data-scroll-section>
+        <section id="experience" data-scroll-section>
           {/* Gradient */}
           <div className="relative isolate -z-10">
             <div
@@ -392,55 +446,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services */}
-        <section id="services" data-scroll-section>
-          <div
-            data-scroll
-            data-scroll-speed=".4"
-            data-scroll-position="top"
-            className="my-24 flex flex-col justify-start space-y-10"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 1,
-                staggerChildren: 0.5,
-              }}
-              viewport={{ once: true }}
-              className="grid items-center gap-1.5 md:grid-cols-2 xl:grid-cols-3"
-            >
-              <div className="flex flex-col py-6 xl:p-6">
-                <h2 className="text-4xl font-medium tracking-tight">
-                  Need more info?
-                  <br />
-                  <span className="text-gradient clash-grotesk tracking-normal">
-                    I got you.
-                  </span>
-                </h2>
-                <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Here are some of the services I offer. If you have any
-                  questions, feel free to reach out.
-                </p>
-              </div>
-              {services.map((service) => (
-                <div
-                  key={service.service}
-                  className="flex flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
-                >
-                  <service.icon className="my-6 text-primary" size={20} />
-                  <span className="text-lg tracking-tight text-foreground">
-                    {service.service}
-                  </span>
-                  <span className="mt-2 tracking-tighter text-muted-foreground">
-                    {service.description}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
         {/* Contact */}
         <section id="contact" data-scroll-section className="my-64">
           <div
@@ -450,12 +455,11 @@ export default function Home() {
             className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
           >
             <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
-              Let&apos;s work{" "}
-              <span className="text-gradient clash-grotesk">together.</span>
+              Let&apos;s {" "}
+              <span className="text-gradient clash-grotesk">CONNECT !</span>
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;m currently available for freelance work and open to
-              discussing new projects.
+              I&apos;m currently open for any exciting software engineering opportunity.
             </p>
             <Link href="mailto:wendoj@proton.me" passHref>
               <Button className="mt-6">Get in touch</Button>

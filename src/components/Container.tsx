@@ -39,8 +39,8 @@ const variants = {
 const navLinks = [
   { href: "#home", text: "Home" },
   { href: "#about", text: "About" },
-  { href: "#projects", text: "Projects" },
-  { href: "#services", text: "Services" },
+  { href: "#skills", text: "Skills" },
+  { href: "#experience", text: "Experience" },
   { href: "#contact", text: "Contact" },
 ];
 
@@ -84,7 +84,7 @@ export default function Container(props: ContainerProps) {
   const router = useRouter();
   const meta = {
     title: "portfolio",
-    description: `Full-stack website developer and TypeScript enthusiast.`,
+    description: `Backend engineer, automation enthusiast`,
     image: "/assets/logo-2.png",
     type: "website",
     ...customMeta,
@@ -128,17 +128,18 @@ export default function Container(props: ContainerProps) {
           href={`https://www.wendoj.codes${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="WendoJ" />
+        <meta property="og:site_name" content="portfolio" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="WendoJ" />
+        <meta name="twitter:site" content="portfolio" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/logo-2.png" />
+        <link rel="icon" href="/logo-2.png" />
       </Head>
       <nav
         className={cn(
@@ -163,10 +164,19 @@ export default function Container(props: ContainerProps) {
             <CrossIcon data-hide={!isOpen} />
           </button>
         </div>
-        <Link href="/">
+        {/* <Link href="/">
           <span className="text-lg font-semibold">wendo</span>
-        </Link>
+        </Link> */}
 
+        <Link href="/">
+          <img
+            src="/logo-2.png"
+            alt="Logo"
+            width={60}
+            height={30}
+            style={{ display: 'inline', verticalAlign: 'bottom' }}
+          />
+        </Link>
         {/* Desktop menu */}
         <ul className={styles["desktop-nav"]}>
           {navLinks.map((link, i) => (
@@ -220,9 +230,9 @@ export default function Container(props: ContainerProps) {
 
                 {/* Footer */}
                 <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
-                  <span className="text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} wendo. All rights reserved.
-                  </span>
+                  {/* <span className="text-sm text-muted-foreground">
+                    © {new Date().getFullYear()} All rights reserved.
+                  </span> */}
                 </div>
               </div>
             </motion.div>
