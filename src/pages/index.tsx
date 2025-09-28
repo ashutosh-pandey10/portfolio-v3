@@ -66,6 +66,28 @@ const projects = [
   },
 ];
 
+const experiences = [
+  {
+    role: "Software Engineer",
+    company: "Morningstar Inc.",
+    duration: "Dec 2023 - Present",
+    image: "/assets/morningstar.png",
+    description:`
+      | Architecting and optimizing enterprise applications for Morningstar. Building scalable Python backends, with a knack for attention to detail. Working with Python, SQL and AWS extensively
+      | A strong track record of delivering high-impact performance gains, such as cutting data processing times by 40% through architectural redesigns and optimizing APIs to be 4x faster
+    `,
+  },
+  {
+    role: "Backend Developer",
+    company: "LTIMindtree",
+    duration: "Jun 2021 - Dec 2023",
+    image: "/assets/ltim.png",
+    description:
+      `| Enabled 5+ ETL use-cases by developing web application based on Django, resulting in outstanding improvement with a turnaround time reduction of over 95% compared to the previous manual processes.
+       | Optimized the performance of Python applications deployed on the cloud by leveraging the Cython library, leading to a remarkable 75% reduction in memory consumption.`,
+  },
+]
+
 const services = [
   {
     service: "Frontend Development",
@@ -366,9 +388,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects */}
+        {/* Experience Section */}
         <section id="experience" data-scroll-section>
-          {/* Gradient */}
           <div className="relative isolate -z-10">
             <div
               className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
@@ -384,51 +405,48 @@ export default function Home() {
             </div>
           </div>
           <div data-scroll data-scroll-speed=".4" className="my-64">
-            <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
-              ✨ Projects
-            </span>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight tracking-tighter xl:text-6xl">
-              Streamlined digital experiences.
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight tracking-tighter xl:text-5xl">
+              Experience
             </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;ve worked on a variety of projects, from small websites to
-              large-scale web applications. Here are some of my favorites:
-            </p>
 
             {/* Carousel */}
             <div className="mt-14">
               <Carousel setApi={setCarouselApi} className="w-full">
                 <CarouselContent>
-                  {projects.map((project) => (
-                    <CarouselItem key={project.title} className="md:basis-1/2">
-                      <Card id="tilt">
-                        <CardHeader className="p-0">
-                          <Link href={project.href} target="_blank" passHref>
-                            {project.image.endsWith(".webm") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            ) : (
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={600}
-                                height={300}
-                                quality={100}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            )}
-                          </Link>
-                        </CardHeader>
-                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                            {project.description}
-                          </CardTitle>
-                        </CardContent>
+                  {experiences.map((experience) => (
+                    <CarouselItem key={experience.company} className="md:basis-1/2">
+                      <Card id="tilt" className="p-6">
+                        {/* Company Logo and Name */}
+                        <div className="flex items-center space-x-4">
+                          <Image
+                            src={experience.image}
+                            alt={experience.company}
+                            width={150}
+                            height={150}
+                            className="rounded-full"
+                          />
+                          <h2 className="text-lg font-semibold">{experience.company}</h2>
+                        </div>
+
+                        {/* Role and Duration */}
+                        <div className="mt-4">
+                          <span className="text-md font-bold">{experience.role}</span>
+                          <span className="text-sm text-muted-foreground">
+                            , {experience.duration}
+                          </span>
+                        </div>
+
+                        {/* Description */}
+                        <p className="mt-4 text-sm text-muted-foreground">
+                        {experience.description
+                          .split("|") // Split the description by the '-' character
+                          .filter((line) => line.trim() !== "") // Remove empty lines
+                          .map((line, index) => (
+                            <p key={index} className="mb-2">
+                              - {line.trim()} {/* Add the '-' back and trim whitespace */}
+                            </p>
+                        ))}
+                        </p>
                       </Card>
                     </CarouselItem>
                   ))}
@@ -436,12 +454,12 @@ export default function Home() {
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
-              <div className="py-2 text-center text-sm text-muted-foreground">
+              {/* <div className="py-2 text-center text-sm text-muted-foreground">
                 <span className="font-semibold">
                   {current} / {count}
                 </span>{" "}
-                projects
-              </div>
+                experiences
+              </div> */}
             </div>
           </div>
         </section>
