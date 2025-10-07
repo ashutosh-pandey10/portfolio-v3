@@ -437,16 +437,16 @@ export default function Home() {
                         </div>
 
                         {/* Description */}
-                        <p className="mt-4 text-sm text-muted-foreground">
-                        {experience.description
-                          .split("|") // Split the description by the '-' character
-                          .filter((line) => line.trim() !== "") // Remove empty lines
-                          .map((line, index) => (
-                            <p key={index} className="mb-2">
-                              - {line.trim()} {/* Add the '-' back and trim whitespace */}
-                            </p>
-                        ))}
-                        </p>
+                        <div className="mt-4 text-sm text-muted-foreground">
+                          {experience.description
+                            .split("|")
+                            .filter((line) => line.trim() !== "")
+                            .map((line, index) => (
+                              <p key={index} className="mb-2">
+                                - {line.trim()}
+                              </p>
+                          ))}
+                        </div>
                       </Card>
                     </CarouselItem>
                   ))}
