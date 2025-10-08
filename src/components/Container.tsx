@@ -83,7 +83,7 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "portfolio",
+    title: "Ashutosh Pandey",
     description: `Backend engineer, automation enthusiast`,
     image: "/assets/logo-2.png",
     type: "website",

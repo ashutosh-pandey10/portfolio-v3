@@ -88,36 +88,39 @@ const experiences = [
   },
 ]
 
-const services = [
+const techGroups = [
   {
-    service: "Frontend Development",
-    description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
-    icon: Code2,
+    group: "Languages",
+    items: [
+      { label: "Python", icon: "/icons/python.png" },
+      { label: "Golang", icon: "/icons/go.png" },
+      { label: "SQL", icon: "/icons/sql.png" },
+      { label: "JavaScript", icon: "/icons/js.png" },
+    ],
   },
   {
-    service: "UX Design",
-    description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
-    icon: Frame,
+    group: "Frameworks",
+    items: [
+      { label: "Flask", icon: "/icons/flask.png" },
+      { label: "Django", icon: "/icons/django.png" },
+      { label: "FastAPI", icon: "/icons/fastapi.png" },
+      { label: "React Js", icon: "/icons/react.png" },
+    ],
   },
   {
-    service: "SEO Optimization",
-    description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
-    icon: SearchCheck,
+    group: "Databases",
+    items: [
+      { label: "PostgreSQL", icon: "/icons/postgres.png" },
+      { label: "SQLServer", icon: "/icons/sqlserver.png" },
+    ],
   },
   {
-    service: "Responsive Design",
-    description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
-    icon: MonitorSmartphone,
-  },
-  {
-    service: "Backend Development",
-    description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
-    icon: Eye,
+    group: "Tools & Platforms",
+    items: [
+      { label: "Git", icon: "/icons/git.png" },
+      { label: "AWS", icon: "/icons/aws.png" },
+      { label: "Docker", icon: "/icons/docker.png" },
+    ],
   },
 ];
 
@@ -247,7 +250,7 @@ export default function Home() {
               data-scroll
               data-scroll-enable-touch-speed
               data-scroll-speed=".06"
-              className="flex flex-row items-center space-x-1.5 pt-6"
+              className="flex flex-row items-center space-x-3 pt-6"
             >
               <Button
                 // variant="outline"
@@ -261,13 +264,28 @@ export default function Home() {
                 </Link> 
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
-              <Link href="mailto:ashupandey516@gmail.com" passHref>
-                <Button
-                  variant="outline">
-                  Get in touch
-                   {/* <ChevronRight className="ml-1 h-4 w-4" /> */}
-                </Button>
-              </Link>
+              {/* Social Icons */}
+              <a href="mailto:ashupandey516@gmail.com" className="inline-block">
+                <span className="w-8 h-8 flex items-center justify-center">
+                  <img alt="Gmail" src="icons/gmail.png" width={32} height={32} style={{background: 'none', border: 'none'}} />
+                </span>
+              </a>
+              <a href="https://www.linkedin.com/in/ashutosh-pandey10" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <span className="w-8 h-8 flex items-center justify-center">
+                  <img alt="LinkedIn" src="icons/linkedin.png" width={50} height={50} style={{background: 'none', border: 'none'}} />
+                {/* <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a> */}
+                </span>
+              </a>
+              <a href="https://leetcode.com/u/pandeyAshutosh" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <span className="w-8 h-8 flex items-center justify-center">
+                  <img alt="Leetcode" src="icons/leetcode.png" width={32} height={32} style={{background: 'none', border: 'none'}} />
+                </span>
+              </a>
+              <a href="https://github.com/ashutosh-pandey10" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <span className="w-8 h-8 flex items-center justify-center">
+                  <img alt="Github" src="icons/github.png" width={50} height={50} style={{background: 'none', border: 'none'}} />
+                </span>
+              </a>
               
             </span>
 
@@ -316,10 +334,10 @@ export default function Home() {
               prototyping, to the delivery of the final product, all while
               efficiently collaborating with cross-functional teams. */}
               Ashutosh Pandey is a backend engineer with 4+ years of experience, holding a 
-              strong foundation in python backends and Golang. I&apos;m proficient in building 
+              strong foundation in python backends and Golang. He is proficient in building 
               REST APIs, working with RDBMS and cloud technologies such as AWS. Passionate 
-              about writing clean, modular and maintainable code, I also like solving complex 
-              backend challenges and enjoy architecting and optimizing enterprise applications.
+              about writing clean, modular and maintainable code, he also likes solving complex 
+              backend challenges and enjoys architecting and optimizing enterprise applications.
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
@@ -359,29 +377,30 @@ export default function Home() {
             >
               <div className="flex flex-col py-6 xl:p-6">
                 <h2 className="text-4xl font-medium tracking-tight">
-                  Need more info?
+                  Skills
                   <br />
                   <span className="text-gradient clash-grotesk tracking-normal">
-                    I got you.
+                    & Technologies
                   </span>
                 </h2>
                 <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Here are some of the services I offer. If you have any
-                  questions, feel free to reach out.
+                  Here are some of the languages, technologies and platforms, I am proficient in working with.
                 </p>
               </div>
-              {services.map((service) => (
+              {techGroups.map((group) => (
                 <div
-                  key={service.service}
-                  className="flex flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
+                  key={group.group}
+                  className="flex flex-col items-center justify-between rounded-md bg-white/5 p-6 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
                 >
-                  <service.icon className="my-6 text-primary" size={20} />
-                  <span className="text-lg tracking-tight text-foreground">
-                    {service.service}
-                  </span>
-                  <span className="mt-2 tracking-tighter text-muted-foreground">
-                    {service.description}
-                  </span>
+                  <span className="text-2xl font-semibold mb-6 text-center">{group.group}</span>
+                  <div className="flex flex-wrap justify-center gap-4 w-full">
+                    {group.items.map((item) => (
+                      <div key={item.label} className="flex flex-col items-center bg-black/30 rounded-md px-2 py-1 mx-1 my-1">
+                        <img src={item.icon} alt={item.label} width={32} height={32} />
+                        <span className="mt-1 text-center text-sm">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </motion.div>
