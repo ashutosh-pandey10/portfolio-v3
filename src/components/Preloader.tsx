@@ -25,15 +25,15 @@ const slideUp = {
 
 const words = [
   "Hello",
-  "नमस्ते",
-  "Bonjour",
   "Ciao",
   "Olà",
+  "Bonjour",
   "やあ",
   "Guten tag",
+  "नमस्ते",
 ];
 
-export default function Preloader() {
+export default function Preloader({ onFinish }: { onFinish?: () => void }) {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -42,14 +42,17 @@ export default function Preloader() {
   }, []);
 
   useEffect(() => {
-    if (index == words.length - 1) return;
-    setTimeout(
-      () => {
-        setIndex(index + 1);
-      },
-      index == 0 ? 1000 : 150,
-    );
-  }, [index]);
+    if (index < words.length - 1) {
+      const timeout = setTimeout(() => setIndex(index + 1), index === 0 ? 100 : 200);
+      return () => clearTimeout(timeout);
+    } else {
+      // Wait a bit after the last word, then call onFinish
+      const timeout = setTimeout(() => {
+        if (onFinish) onFinish();
+      }, 100);
+      return () => clearTimeout(timeout);
+    }
+  }, [index, onFinish]);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`;
   const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;

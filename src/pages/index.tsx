@@ -267,23 +267,23 @@ export default function Home() {
               {/* Social Icons */}
               <a href="mailto:ashupandey516@gmail.com" className="inline-block">
                 <span className="w-8 h-8 flex items-center justify-center">
-                  <img alt="Gmail" src="icons/gmail.png" width={32} height={32} style={{background: 'none', border: 'none'}} />
+                  <Image alt="Gmail" src="/icons/gmail.png" width={32} height={32} style={{background: 'none', border: 'none'}} />
                 </span>
               </a>
               <a href="https://www.linkedin.com/in/ashutosh-pandey10" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <span className="w-8 h-8 flex items-center justify-center">
-                  <img alt="LinkedIn" src="icons/linkedin.png" width={50} height={50} style={{background: 'none', border: 'none'}} />
+                  <Image alt="LinkedIn" src="/icons/linkedin.png" width={50} height={50} style={{background: 'none', border: 'none'}} />
                 {/* <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Freepik - Flaticon</a> */}
                 </span>
               </a>
               <a href="https://leetcode.com/u/pandeyAshutosh" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <span className="w-8 h-8 flex items-center justify-center">
-                  <img alt="Leetcode" src="icons/leetcode.png" width={32} height={32} style={{background: 'none', border: 'none'}} />
+                  <Image alt="Leetcode" src="/icons/leetcode.png" width={32} height={32} style={{background: 'none', border: 'none'}} />
                 </span>
               </a>
               <a href="https://github.com/ashutosh-pandey10" target="_blank" rel="noopener noreferrer" className="inline-block">
                 <span className="w-8 h-8 flex items-center justify-center">
-                  <img alt="Github" src="icons/github.png" width={50} height={50} style={{background: 'none', border: 'none'}} />
+                  <Image alt="Github" src="/icons/github.png" width={50} height={50} style={{background: 'none', border: 'none'}} />
                 </span>
               </a>
               
@@ -396,7 +396,7 @@ export default function Home() {
                   <div className="flex flex-wrap justify-center gap-4 w-full">
                     {group.items.map((item) => (
                       <div key={item.label} className="flex flex-col items-center bg-black/30 rounded-md px-2 py-1 mx-1 my-1">
-                        <img src={item.icon} alt={item.label} width={32} height={32} />
+                        <Image src={item.icon} alt={item.label} width={32} height={32} />
                         <span className="mt-1 text-center text-sm">{item.label}</span>
                       </div>
                     ))}

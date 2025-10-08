@@ -103,14 +103,7 @@ export default function Container(props: ContainerProps) {
     };
   }, []);
 
-  // preloader effect
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-      document.body.style.cursor = "default";
-      window.scrollTo(0, 0);
-    }, 2000);
-  }, []);
+  // Preloader will control when to hide itself.
 
   return (
     <>
@@ -252,7 +245,7 @@ export default function Container(props: ContainerProps) {
 
       {/* Preloader */}
       <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
+        {isLoading && <Preloader onFinish={() => setIsLoading(false)} />}
       </AnimatePresence>
 
       {/* Main content */}
