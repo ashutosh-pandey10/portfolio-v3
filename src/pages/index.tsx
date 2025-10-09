@@ -498,7 +498,7 @@ export default function Home() {
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
               I&apos;m currently open for any exciting software engineering opportunity.
             </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
+            <Link href="mailto:ashupandey516@gmail.com" passHref>
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
