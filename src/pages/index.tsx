@@ -68,7 +68,7 @@ const projects = [
 
 const experiences = [
   {
-    role: "Software Engineer",
+    role: "Senior Software Engineer",
     company: "Morningstar Inc.",
     duration: "Dec 2023 - Present",
     image: "/assets/morningstar.png",
@@ -257,7 +257,7 @@ export default function Home() {
                 onClick={() => scrollTo(document.querySelector("#about"))}
               >
                 <Link 
-                  href="https://drive.google.com/file/d/1jSEXTutMPFk-vI6KThwNJUsbEBaUciYj/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1L3pJ44VhyoFdUrcN-xrHHyQZPqsdtjp-/view?usp=sharing"
                   target="_blank"
                   >
                   Download résumé
