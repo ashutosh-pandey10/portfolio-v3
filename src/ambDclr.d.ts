@@ -1,0 +1,1 @@
+declare function define(...args: unknown[]): unknown;
